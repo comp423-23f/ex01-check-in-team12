@@ -1,0 +1,19 @@
+<p>Check In Page</p>
+
+
+<form [formGroup]="checkPID" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="PID">
+        PID
+        </label>
+        <input id="PID" type="text" formControlName="PID">
+    </div>
+
+    <button class="button" type="submit">Submit</button>
+
+    <a [routerLink]="['/']">
+        <h3>Home</h3>
+    </a>
+
+</form>
