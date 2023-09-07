@@ -1,0 +1,18 @@
+<h3>Registered Members</h3>
+
+<a [routerLink]="['/']">
+    <h3>Home</h3>
+</a>
+
+  <div *ngIf="users.length > 0">
+    <ul>
+      <li *ngFor="let user of users">
+        <strong>First Name:</strong> {{ user.first }}<br>
+        <strong>Last Name:</strong> {{ user.last }}<br>
+        <strong>PID:</strong> {{ user.pid }}<br><br>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="users.length === 0">
+    <p>No users registered yet.</p>
+  </div>
