@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RegistrationComponent } from '../registration/registration.component';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  
 }
