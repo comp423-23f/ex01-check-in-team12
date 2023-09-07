@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegistrationComponent,
+    StatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,6 +22,7 @@ import { RegistrationComponent } from './registration/registration.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'register', component: RegistrationComponent},
+      { path: 'stats', component: StatsComponent},
 
   ])
   ],

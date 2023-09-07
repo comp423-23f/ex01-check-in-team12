@@ -1,7 +1,7 @@
 export class user {
     constructor(
-        first: string,
-        last: string,
-        pid: string
+        public first: string,
+        public last: string,
+        public pid: string
     ) {}
 }
