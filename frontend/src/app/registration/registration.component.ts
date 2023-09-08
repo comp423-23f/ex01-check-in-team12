@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UserService } from '../user.service';
+import { user } from '../user';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
@@ -23,8 +25,8 @@ export class RegistrationComponent {
   ) {}
 
   onSubmit(): void {
-    // this.userService.addUser()
-    // this.userService.getUsers()
+    let User = new user(this.userBuilder.value.first as string, this.userBuilder.value.last as string, this.userBuilder.value.PID as string);
+    this.userService.addUser(User);
     window.alert('Thank you for registering! You can now go to the homepage ' + this.userBuilder.value.first);
     this.userBuilder.reset();
   }
