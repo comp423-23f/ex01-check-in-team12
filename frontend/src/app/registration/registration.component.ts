@@ -27,7 +27,6 @@ export class RegistrationComponent {
   onSubmit(): void {
     let User = new user(this.userBuilder.value.first as string, this.userBuilder.value.last as string, this.userBuilder.value.PID as string);
     this.userService.addUser(User);
-    // this.userService.getUsers()
     window.alert('Thank you for registering! You can now go to the homepage ' + this.userBuilder.value.first);
     this.userBuilder.reset();
   }

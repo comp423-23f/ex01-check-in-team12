@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validator, FormGroup } from '@angular/forms';
 import { UserService } from '../user.service';
+import { CheckinService } from '../checkin.service';
+import { checkin } from '../checkin';
 
 @Component({
   selector: 'app-checkin',
@@ -17,6 +19,7 @@ export class CheckinComponent {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
+    private checkedinService: CheckinService,
   ) {}
 
   onSubmit(): void {
@@ -27,6 +30,12 @@ export class CheckinComponent {
         if (this.checkPID.value.PID === user.pid) {
           window.alert("User found: " + user.first + " " + user.last);
           userFound = true;
+
+          const currentDate = new Date();
+
+          let CheckedIn = new checkin(user.first as string, user.last as string, user.pid as string, currentDate); 
+          this.checkedinService.addChecked(CheckedIn);
+
           this.checkPID.reset();
         }
       } 
