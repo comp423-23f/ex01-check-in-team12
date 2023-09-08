@@ -1,9 +1,12 @@
-<h3>Registered Members</h3>
+<h3>Stats of Users</h3>
 
+<br>
 <a [routerLink]="['/']">
     <h3>Home</h3>
 </a>
 
+<br>
+<h3>Registered Members</h3>
   <div *ngIf="users.length > 0">
     <ul>
       <li *ngFor="let user of users">
@@ -15,4 +18,22 @@
   </div>
   <div *ngIf="users.length === 0">
     <p>No users registered yet.</p>
+  </div>
+
+  
+  <br>
+  <h3>Checked-In Members</h3>
+  <div *ngIf="checkedUsers.length > 0">
+
+    <ul>
+      <li *ngFor="let checked of checkedUsers">
+        <strong>First Name:</strong> {{ checked.first }}<br>
+        <strong>Last Name:</strong> {{ checked.last }}<br>
+        <strong>PID:</strong> {{ checked.pid }}<br><br>
+        <strong>Date:</strong> {{ checked.date }}<br><br>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="checkedUsers.length === 0">
+    <p>No users checked in yet.</p>
   </div>
